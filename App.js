@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import colors from './src/ui/colors';
+import Store, { StoreProvider } from './src/models/Store';
+import Game from './src/components/scenes/Game';
 
-export default function App() {
+const store = new Store();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <StoreProvider store={store}>
+      <View style={styles.body}>
+        <View style={styles.container}>
+          <Game />
+        </View>
+      </View>
+    </StoreProvider>
   );
-}
+};
+export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  body: {
+    backgroundColor: colors.green,
+    width: '100%',
+    height: '100%',
+    alignContent: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
+  container: {
+    width: 320,
   },
 });
