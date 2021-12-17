@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     borderTopColor: 'transparent',
     borderBottomColor: 'transparent',
     borderLeftColor: 'transparent',
-    borderRightColor: colors.darkGreen,
+    borderRightColor: colors.darkGreen, 
   },
   thierdField: {
     borderRightColor: 'transparent',
